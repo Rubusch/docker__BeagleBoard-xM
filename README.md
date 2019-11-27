@@ -5,7 +5,7 @@
 
 ## Resources
 
-TODO
+https://github.com/beagleboard/meta-beagleboard
 
 
 ## Build
