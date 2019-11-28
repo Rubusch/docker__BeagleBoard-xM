@@ -5,7 +5,11 @@
 
 ## Resources
 
+http://www.angstrom-distribution.org/building-angstrom
+http://www.openembedded.org/Getting_Started
+http://www.angstrom-distribution.org/simplified-development-setup
 https://github.com/beagleboard/meta-beagleboard
+
 
 
 ## Build
