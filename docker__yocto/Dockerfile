@@ -72,7 +72,8 @@ RUN sed -i '/%sudo/s/.*/%sudo   ALL=NOPASSWD: ALL/' /etc/sudoers
 ## get sources
 RUN cd /home/$USER && git clone -b $BRANCH_YOCTO git://git.yoctoproject.org/poky poky
 
-RUN cd /home/$USER/poky && git clone -b $BRANCH_YOCTO git clone git://git.openembedded.org/openembedded-core openembedded-core
+# TODO branch
+RUN cd /home/$USER/poky && git clone git clone git://git.openembedded.org/openembedded-core openembedded-core
 COPY meta-lothars-configs/conf/layer.conf.meta-opemembedded /home/$USER/poky/openembedded-core/conf/layer.conf
 
 RUN cd /home/$USER/poky && git clone -b $BRANCH_YOCTO git://git.openembedded.org/meta-openembedded
