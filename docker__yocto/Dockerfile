@@ -15,13 +15,10 @@ ARG BRANCH_YOCTO="daisy"
 
 ################################################################################
 ## set up apt fully functional
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get autoremove -y --purge
-
+RUN apt-get update && apt-get upgrade -y && apt-get autoremove -y --purge
 
 RUN apt-get install -y  \
-        apt-utils
+    apt-utils
 
 RUN apt-get install -y  \
     build-essential \
@@ -49,10 +46,10 @@ RUN apt-get install -y  \
 
 
 # ## (opt) tools for debugging and working, e.g. X11-apps for testing the xserver via xclock
-# RUN apt-get install -y   \
-#     vim \
-#     sudo \
-#     x11-apps
+RUN apt-get install -y   \
+    vim \
+    sudo \
+    x11-apps
 
 
 ################################################################################
@@ -73,14 +70,14 @@ RUN sed -i '/%sudo/s/.*/%sudo   ALL=NOPASSWD: ALL/' /etc/sudoers
 
 # ################################################################################
 # ## get sources
-# RUN cd /home/$USER && git clone -b $BRANCH_YOCTO git://git.yoctoproject.org/poky poky
+RUN cd /home/$USER && git clone -b $BRANCH_YOCTO git://git.yoctoproject.org/poky poky
 
-# RUN cd /home/$USER/poky && git clone -b $BRANCH_YOCTO git://git.openembedded.org/meta-openembedded
+RUN cd /home/$USER/poky && git clone -b $BRANCH_YOCTO git://git.openembedded.org/meta-openembedded
 
-# RUN cd /home/$USER/poky && git clone -b $BRANCH_YOCTO https://github.com/meta-qt5/meta-qt5.git
+RUN cd /home/$USER/poky && git clone -b $BRANCH_YOCTO https://github.com/meta-qt5/meta-qt5.git
 
 
-# RUN cd /home/$USER/poky && git clone -b $BRANCH_YOCTO git://git.yoctoproject.org/meta-ti meta-ti
+RUN cd /home/$USER/poky && git clone -b $BRANCH_YOCTO git://git.yoctoproject.org/meta-ti meta-ti
 
 # RUN cd /home/$USER/poky && git clone git://github.com/beagleboard/meta-beagleboard.git bbb
 
