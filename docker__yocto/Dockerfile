@@ -68,8 +68,8 @@ RUN usermod -a -G sudo "$USER"
 RUN sed -i '/%sudo/s/.*/%sudo   ALL=NOPASSWD: ALL/' /etc/sudoers
 
 
-# ################################################################################
-# ## get sources
+################################################################################
+## get sources
 RUN cd /home/$USER && git clone -b $BRANCH_YOCTO git://git.yoctoproject.org/poky poky
 
 RUN cd /home/$USER/poky && git clone -b $BRANCH_YOCTO git clone git://git.openembedded.org/openembedded-core openembedded-core
@@ -80,9 +80,9 @@ COPY meta-lothars-configs/conf/layer.conf.opemembedded-core /home/$USER/poky/met
 
 RUN cd /home/$USER/poky && git clone -b $BRANCH_YOCTO https://github.com/meta-qt5/meta-qt5.git
 
+## beaglebone uses meta-yocto-bsp - beagleboard xM used meta-ti
 RUN cd /home/$USER/poky && git clone -b $BRANCH_YOCTO git://git.yoctoproject.org/meta-ti meta-ti
-
-# RUN cd /home/$USER/poky && git clone git://github.com/beagleboard/meta-beagleboard.git bbb
+#RUN cd /home/$USER/poky && git clone git://github.com/beagleboard/meta-beagleboard.git bbb
 
 ## reset permissions
 RUN chown $USER:$USER -R /home/$USER
