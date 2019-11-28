@@ -73,11 +73,12 @@ RUN sed -i '/%sudo/s/.*/%sudo   ALL=NOPASSWD: ALL/' /etc/sudoers
 RUN cd /home/$USER && git clone -b $BRANCH_YOCTO git://git.yoctoproject.org/poky poky
 
 RUN cd /home/$USER/poky && git clone -b $BRANCH_YOCTO git clone git://git.openembedded.org/openembedded-core openembedded-core
+COPY meta-lothars-configs/conf/layer.conf.meta-opemembedded /home/$USER/poky/openembedded-core/conf/layer.conf
 
 RUN cd /home/$USER/poky && git clone -b $BRANCH_YOCTO git://git.openembedded.org/meta-openembedded
+COPY meta-lothars-configs/conf/layer.conf.opemembedded-core /home/$USER/poky/meta-openembedded/conf/layer.conf
 
 RUN cd /home/$USER/poky && git clone -b $BRANCH_YOCTO https://github.com/meta-qt5/meta-qt5.git
-
 
 RUN cd /home/$USER/poky && git clone -b $BRANCH_YOCTO git://git.yoctoproject.org/meta-ti meta-ti
 
