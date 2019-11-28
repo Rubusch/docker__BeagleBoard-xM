@@ -74,10 +74,10 @@ RUN cd /home/$USER && git clone -b $BRANCH_YOCTO git://git.yoctoproject.org/poky
 
 # TODO branch
 RUN cd /home/$USER/poky && git clone -b $BRANCH_YOCTO git://git.openembedded.org/openembedded-core openembedded-core && mkdir -p /home/$USER/poky/openembedded-core/conf
-COPY meta-lothars-configs/conf/layer.conf.meta-opemembedded /home/$USER/poky/openembedded-core/conf/layer.conf
+COPY meta-lothars-configs/conf/layer.conf.meta-openembedded /home/$USER/poky/openembedded-core/conf/layer.conf
 
 RUN cd /home/$USER/poky && git clone -b $BRANCH_YOCTO git://git.openembedded.org/meta-openembedded meta-openembedded && mkdir -p /home/$USER/poky/meta-openembedded/conf
-COPY meta-lothars-configs/conf/layer.conf.opemembedded-core /home/$USER/poky/meta-openembedded/conf/layer.conf
+COPY meta-lothars-configs/conf/layer.conf.openembedded-core /home/$USER/poky/meta-openembedded/conf/layer.conf
 
 RUN cd /home/$USER/poky && git clone -b $BRANCH_YOCTO https://github.com/meta-qt5/meta-qt5.git
 
