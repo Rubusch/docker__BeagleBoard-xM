@@ -35,7 +35,7 @@
 #MACHINE ?= "edgerouter"
 #
 # This sets the default machine to be qemux86 if no other machine is selected:
-MACHINE ?= "beaglebone-yocto"
+MACHINE ?= "beagleboard"
 
 #
 # Where to place downloads
@@ -252,3 +252,19 @@ CONF_VERSION = "1"
 
 ## set password to 'root'
 EXTRA_USERS_PARAMS = "usermod -P root root; "
+
+BB_NUMBER_THREADS = "4"
+PARALLEL_MAKE = "-j 4"
+INHERIT += "rm_work"
+IMAGE_INSTALL_append = " \
+            packagegroup-core-x11 \
+            libx11 \
+            qtbase \
+            qt3d \
+            qtconnectivity \
+            qtmultimedia \
+            qtserialport \
+            qtwebsockets \
+            qtsvg \
+            qtx11extras \
+            "
