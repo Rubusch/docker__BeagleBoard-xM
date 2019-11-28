@@ -5,6 +5,8 @@
 
 ## Resources
 
+https://sanchayanmaity.gitlab.io/posts/2014-08-07-setting-up-yoctopoky-for-beagleboard-xmbeagleboardbeaglebone.html
+
 http://www.angstrom-distribution.org/building-angstrom
 http://www.openembedded.org/Getting_Started
 http://www.angstrom-distribution.org/simplified-development-setup
