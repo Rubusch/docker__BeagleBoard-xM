@@ -11,7 +11,7 @@ cp -arf /home/$(whoami)/poky/meta-lothars-configs/conf/bblayers.conf.sample ${BU
 cp -arf /home/$(whoami)/poky/meta-lothars-configs/conf/local.conf.sample ${BUILDDIR}/conf/local.conf
 
 ## adjust config files
-sed "s/  ~\/poky\/meta/  \/home\/$(whoami)\/poky\/meta/g" -i ${BUILDDIR}/conf/bblayers.conf
+sed "s/  ~\/poky\//  \/home\/$(whoami)\/poky\//g" -i ${BUILDDIR}/conf/bblayers.conf
 
 ## build
 bitbake core-image-minimal
