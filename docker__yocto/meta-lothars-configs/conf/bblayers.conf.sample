@@ -1,5 +1,9 @@
-# LAYER_CONF_VERSION is increased each time build/conf/bblayers.conf
-# changes incompatibly
+## LAYER_CONF_VERSION is increased each time build/conf/bblayers.conf
+## changes incompatibly
+##
+##
+## removed from setup:
+##  ~/poky/openembedded-core
 LCONF_VERSION = "6"
 
 BBPATH = "${TOPDIR}"
@@ -11,7 +15,6 @@ BBLAYERS ?= " \
   ~/poky/meta-yocto-bsp \
   ~/poky/meta-ti \
   ~/poky/meta-qt5 \
-  ~/poky/openembedded-core \
   ~/poky/meta-openembedded/meta-ruby \
   ~/poky/meta-openembedded/meta-oe \
   "
