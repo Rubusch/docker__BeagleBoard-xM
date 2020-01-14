@@ -4,6 +4,7 @@
 ##
 ## removed from setup:
 ##  ~/poky/openembedded-core
+##  ~/poky/meta-openembedded/meta-ruby 
 LCONF_VERSION = "6"
 
 BBPATH = "${TOPDIR}"
@@ -15,11 +16,9 @@ BBLAYERS ?= " \
   ~/poky/meta-yocto-bsp \
   ~/poky/meta-ti \
   ~/poky/meta-qt5 \
-  ~/poky/meta-openembedded/meta-ruby \
   ~/poky/meta-openembedded/meta-oe \
   "
 BBLAYERS_NON_REMOVABLE ?= " \
   ~/poky/meta \
   ~/poky/meta-yocto \
   "
-
